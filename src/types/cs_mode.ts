@@ -1,0 +1,35 @@
+export enum cs_mode {
+  LITTLE_ENDIAN = 0, // little-endian mode (default mode)
+  ARM = 0, // 32-bit ARM
+  _16 = 1 << 1, // 16-bit mode (X86)
+  _32 = 1 << 2, // 32-bit mode (X86)
+  _64 = 1 << 3, // 64-bit mode (X86, PPC)
+  THUMB = 1 << 4, // ARM's Thumb mode, including Thumb-2
+  MCLASS = 1 << 5, // ARM's Cortex-M series
+  V8 = 1 << 6, // ARMv8 A32 encodings for ARM
+  MICRO = 1 << 4, // MicroMips mode (MIPS)
+  MIPS3 = 1 << 5, // Mips III ISA
+  MIPS32R6 = 1 << 6, // Mips32r6 ISA
+  MIPS2 = 1 << 7, // Mips II ISA
+  V9 = 1 << 4, // SparcV9 mode (Sparc)
+  QPX = 1 << 4, // Quad Processing eXtensions mode (PPC)
+  M68K_000 = 1 << 1, // M68K 68000 mode
+  M68K_010 = 1 << 2, // M68K 68010 mode
+  M68K_020 = 1 << 3, // M68K 68020 mode
+  M68K_030 = 1 << 4, // M68K 68030 mode
+  M68K_040 = 1 << 5, // M68K 68040 mode
+  M68K_060 = 1 << 6, // M68K 68060 mode
+  BIG_ENDIAN = 1 << 31, // big-endian mode
+  MIPS32 = 1 << 2, // Mips32 ISA (Mips)
+  MIPS64 = 1 << 3, // Mips64 ISA (Mips)
+  M680X_6301 = 1 << 1, // M680X Hitachi 6301,6303 mode
+  M680X_6309 = 1 << 2, // M680X Hitachi 6309 mode
+  M680X_6800 = 1 << 3, // M680X Motorola 6800,6802 mode
+  M680X_6801 = 1 << 4, // M680X Motorola 6801,6803 mode
+  M680X_6805 = 1 << 5, // M680X Motorola/Freescale 6805 mode
+  M680X_6808 = 1 << 6, // M680X Motorola/Freescale/NXP 68HC08 mode
+  M680X_6809 = 1 << 7, // M680X Motorola 6809 mode
+  M680X_6811 = 1 << 8, // M680X Motorola/Freescale/NXP 68HC11 mode
+  M680X_CPU12 = 1 << 9, // M680X Motorola/Freescale/NXP CPU12
+  M680X_HCS08 = 1 << 10, // M680X Freescale/NXP HCS08 mode
+}

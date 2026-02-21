@@ -1,0 +1,62 @@
+{
+  "name": "@cheatron/capstone",
+  "version": "1.0.0",
+  "description": "TypeScript/FFI bindings for the Capstone disassembly engine with full OOP support",
+  "module": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist",
+    "deps",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "capstone",
+    "disassembler",
+    "disassembly",
+    "x86",
+    "x86_64",
+    "reverse-engineering",
+    "binary-analysis",
+    "ffi",
+    "typescript",
+    "cheatron",
+    "win32",
+    "windows"
+  ],
+  "homepage": "https://github.com/Cheatron/cheatron-capstone#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cheatron/cheatron-capstone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cheatron/cheatron-capstone/issues"
+  },
+  "dependencies": {
+    "@cheatron/win32-ext": "^1.0.2"
+  },
+  "devDependencies": {
+    "@cheatron/keystone": "^1.0.0",
+    "@eslint/js": "^10.0.1",
+    "@types/bun": "latest",
+    "add": "^2.0.6",
+    "eslint": "^10.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.3.0",
+    "koffi": "^2.15.1",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "bun run build",
+    "test": "bun test",
+    "lint": "eslint {src,tests}/**/*.ts --cache",
+    "lint:fix": "eslint {src,tests}/**/*.ts --fix",
+    "format": "prettier --write {src,tests}/**/*.ts",
+    "format:check": "prettier --check {src,tests}/**/*.ts"
+  }
+}
