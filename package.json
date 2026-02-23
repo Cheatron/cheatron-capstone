@@ -38,7 +38,7 @@
     "@cheatron/win32-ext": "^1.0.3"
   },
   "devDependencies": {
-    "@cheatron/keystone": "^1.0.0",
+    "@cheatron/keystone": "^1.0.1",
     "@eslint/js": "^10.0.1",
     "@types/bun": "latest",
     "add": "^2.0.6",
