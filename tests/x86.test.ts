@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'bun:test';
-import { CapstoneX86, x86_op_type, x86_insn } from '../src';
+import { CapstoneX86, x86_op_type, x86_insn, x86_reg } from '../src';
 
 describe('Capstone X86 Disassembly', () => {
   it('should disassemble x86_64 instructions accurately using CapstoneX86 class', () => {
@@ -78,5 +78,36 @@ describe('Capstone X86 Disassembly', () => {
     expect(typeof version.minor).toBe('number');
     expect(version.major).toEqual(4);
     expect(version.minor).toEqual(0);
+  });
+
+  it('should resolve register names with regName', () => {
+    const cs = new CapstoneX86();
+
+    expect(cs.regName(x86_reg.RAX)).toBe('rax');
+    expect(cs.regName(x86_reg.RBP)).toBe('rbp');
+    expect(cs.regName(x86_reg.RSP)).toBe('rsp');
+    expect(cs.regName(x86_reg.RIP)).toBe('rip');
+    expect(cs.regName(x86_reg.EAX)).toBe('eax');
+    expect(cs.regName(x86_reg.AL)).toBe('al');
+    expect(cs.regName(x86_reg.XMM0)).toBe('xmm0');
+
+    cs.close();
+  });
+
+  it('should resolve instruction names with insnName', () => {
+    const cs = new CapstoneX86();
+
+    expect(cs.insnName(x86_insn.MOV)).toBe('mov');
+    expect(cs.insnName(x86_insn.PUSH)).toBe('push');
+    expect(cs.insnName(x86_insn.POP)).toBe('pop');
+    expect(cs.insnName(x86_insn.CALL)).toBe('call');
+    expect(cs.insnName(x86_insn.RET)).toBe('ret');
+    expect(cs.insnName(x86_insn.NOP)).toBe('nop');
+    expect(cs.insnName(x86_insn.ADD)).toBe('add');
+    expect(cs.insnName(x86_insn.SUB)).toBe('sub');
+    expect(cs.insnName(x86_insn.XOR)).toBe('xor');
+    expect(cs.insnName(x86_insn.JMP)).toBe('jmp');
+
+    cs.close();
   });
 });

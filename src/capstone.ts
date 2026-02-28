@@ -81,8 +81,7 @@ export class Capstone<T extends Instruction = Instruction> {
     }
 
     strerror(code: INT32): string {
-        const ptr = CapstoneImpl.cs_strerror(code);
-        return (ffi.decode(ptr, 'char*') as string) || 'Unknown error';
+        return (CapstoneImpl.cs_strerror(code) as unknown as string) || 'Unknown error';
     }
 
     disasm(code: Buffer, address: bigint, count: number = 0): T[] {
@@ -173,13 +172,11 @@ export class Capstone<T extends Instruction = Instruction> {
     }
 
     regName(regId: UINT32): string {
-        const ptr = CapstoneImpl.cs_reg_name(this.handle, regId);
-        return (ffi.decode(ptr, 'char*') as string) || '';
+        return (CapstoneImpl.cs_reg_name(this.handle, regId) as unknown as string) || '';
     }
 
     insnName(insnId: UINT32): string {
-        const ptr = CapstoneImpl.cs_insn_name(this.handle, insnId);
-        return (ffi.decode(ptr, 'char*') as string) || '';
+        return (CapstoneImpl.cs_insn_name(this.handle, insnId) as unknown as string) || '';
     }
 
     close(): void {
